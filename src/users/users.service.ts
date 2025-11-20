@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
+import { User } from './users.interface';
 
 @Injectable()
 export class UsersService {
-    private users = []
+    private users: User[] = []
 
-    async createUser(data) {
+    async createUser(data: any) {
         const hashed = await bcrypt.hash(data.password, 10)
 
         const newUser = {
