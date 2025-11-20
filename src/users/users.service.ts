@@ -20,7 +20,7 @@ export class UsersService {
         return newUser
     }
 
-    async findByEmail(email: String) {
+    async findByEmail(email: string) {
         return this.users.find(u => u.email === email)
     }
 
