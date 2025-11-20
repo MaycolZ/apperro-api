@@ -15,11 +15,6 @@ export class AuthService {
     return { message: 'Usuario creado', user };
   }
 
-  async signup(data) {
-    const user = await this.usersService.createUser(data);
-    return { message: 'Usuario creado', user };
-  }
-
   async signin(data) {
     const user = await this.usersService.findByEmail(data.email);
     if (!user) throw new UnauthorizedException('Credenciales incorrectas');
